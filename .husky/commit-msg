@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+# Check for placeholder commit messages
+if grep -q -E "^(asd|dd|test|wip|fix|update|commit)$" "$1"; then
+  echo "❌ Commit message is too generic. Please write a descriptive commit message."
+  echo "Examples:"
+  echo "  feat: add user authentication"
+  echo "  fix: resolve login form validation"
+  echo "  docs: update README with setup instructions"
+  exit 1
+fi 
